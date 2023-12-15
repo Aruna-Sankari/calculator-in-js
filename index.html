@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Calculator</title>
+<style>
+table{
+margin:auto;
+border:3px solid black;
+padding:10px;
+
+}
+.btn{
+width:100%;
+background-color:black;
+color:white;
+border-radius:10px;
+padding:8px;
+font-size:20px;
+border:none;
+}
+input[type="text"]{
+border:2px solid black;
+width:100%;
+margin-bottom:10px;
+padding:7px;
+font-size:17px;
+font-weight:bold;
+}
+.btn1{
+background-color:orange;
+color:white;
+border-radius:10px;
+border:none;
+width:100%;
+padding:8px;
+font-size:18px;
+}
+.btn2{
+background-color:blue;
+color:white;
+border-radius:10px;
+border:none;
+width:100%;
+padding:8px;
+font-size:18px;
+margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Calculator</h1>
+<table>
+<form>
+<tr>
+<td colspan="3"><input type="text" id="result"></td>
+<td><input type="button" value="clear" onClick="clr()" class="btn2"></td>
+</tr>
+<tr>
+<td><input type="button" value="1"  class="btn" onClick="display('1')"></td>
+<td><input type="button" value="2" class="btn" onClick="display('2')"></td>
+<td><input type="button" value="3"  class="btn"onClick="display('3')"></td>
+<td><input type="button" value="+" class="btn1" onClick="display('+')"></td>
+</tr>
+<tr>
+<td><input type="button" value="4" class="btn" onClick="display('4')"></td>
+<td><input type="button" value="5"  class="btn" onClick="display('5')"></td>
+<td><input type="button" value="6" class="btn" onClick="display('6')"></td>
+<td><input type="button" value="-"class="btn1" onClick="display('-')"></td>
+</tr>
+<tr>
+<td><input type="button" value="7" class="btn" onClick="display('7')"></td>
+<td><input type="button" value="8" class="btn" onClick="display('8')"></td>
+<td><input type="button" value="9"  class="btn"onClick="display('9')"></td>
+<td><input type="button" value="*" class="btn1"onClick="display('*')"></td>
+</tr>
+<tr>
+<td><input type="button" value="%" class="btn1"onClick="display('%')"></td>
+<td><input type="button" value="0" class="btn" onClick="display('0')"></td>
+<td><input type="button" value="="class="btn1" onClick="equate()"></td>
+<td><input type="button" value="/" class="btn1"onClick="display('/')"></td>
+</tr>
+</tr>
+</form>
+</table>
+<script>
+function display(val){
+document.getElementById("result").value+=val;    // To display the value in the textbox
+}
+function equate(){
+let x=document.getElementById("result").value;              // To store the displayed value(textbox)  in the variable 'x'
+let y=eval(x);                                                                                // To evaluate it by using.....eval(predefined function)
+console.log(y);
+document.getElementById("result").value=y;                      // To print the result in textbox
+}
+function clr(){
+document.getElementById("result").value="";                      // To clear the value in textbox
+}
+</script>
+</body>
+</html>
